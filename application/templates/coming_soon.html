@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="main-text center">
+            <h1>Octave Atlanta</h1>
+            <h3>A Capella</h3>
+            <p>New website coming soon!</p>
+        </div>
+        <div class="socials center">
+            <p>Follow us for updates:</p>
+            {% for link, icon in sm_accts|batch(2) %}
+            {{sm_acct}}
+            <a href="{{link}}"><img src="{{url_for('static',filename=icon)}}"></a>
+            {% endfor %}
+        </div>
+        <div class="contact center">
+            <p>
+                Contact us:
+            </p>
+            <ul>
+                <li><a href="mailto:octaveatl@gmail.com">octaveatl@gmail.com</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
