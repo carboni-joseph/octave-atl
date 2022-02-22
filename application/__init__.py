@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 def create_app():
 
@@ -10,5 +10,9 @@ def create_app():
             ("https://www.instagram.com/octaveatlanta/"),("Instagram-Logo.png"),
         ]
         return render_template('coming_soon.html', sm_accts=socials)
+
+    @app.route('/robots.txt')
+    def robots():
+        return send_from_directory(app.static_folder,"robots.txt")
 
     return app
